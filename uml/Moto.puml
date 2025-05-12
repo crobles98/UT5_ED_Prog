@@ -1,3 +1,4 @@
+@startuml
 class Moto extends Vehiculo implements Valorable {
   + cilindrada: int
   + tipoMoto: TipoMoto <<enum>>
@@ -8,3 +9,4 @@ class Moto extends Vehiculo implements Valorable {
   + setTipoMoto(tipoMoto: TipoMoto): void
   + calcularDepreciacion(): double
 }
+@enduml
