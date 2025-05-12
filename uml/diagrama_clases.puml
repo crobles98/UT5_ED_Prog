@@ -1,0 +1,209 @@
+@startuml
+abstract class Vehiculo {
+  + matricula: String
+  + marca: String
+  + modelo: String
+  + kilometraje: int
+  + precio: double
+  + propietario: Persona [0..1]
+  + estado: Estado
+  + Vehiculo(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, estado: Estado)
+  + getMatricula(): String
+  + setMatricula(matricula: String): void
+  + getMarca(): String
+  + setMarca(marca: String): void
+  + getModelo(): String
+  + setModelo(modelo: String): void
+  + getKilometraje(): int
+  + setKilometraje(kilometraje: int): void
+  + getPrecio(): double
+  + setPrecio(precio: double): void
+  + getPropietario(): Persona
+  + setPropietario(propietario: Persona): void
+  + getEstado(): Estado
+  + setEstado(estado: Estado): void
+  + calcularDepreciacion(): double <<abstract>>
+}
+
+enum Estado {
+  DISPONIBLE
+  VENDIDO
+}
+
+class Persona {
+  + nombre: String
+  + apellidos: String
+  + dni: String
+  + añoNacimiento: int
+  + fechaCaducidadCarnet: LocalDate
+  + Persona(nombre: String, apellidos: String, dni: String, añoNacimiento: int, fechaCaducidadCarnet: LocalDate)
+  + getNombre(): String
+  + setNombre(nombre: String): void
+  + getApellidos(): String
+  + setApellidos(apellidos: String): void
+  + getDni(): String
+  + setDni(dni: String): void
+  + getAñoNacimiento(): int
+  + setAñoNacimiento(añoNacimiento: int): void
+  + getFechaCaducidadCarnet(): LocalDate
+  + setFechaCaducidadCarnet(fechaCaducidadCarnet: LocalDate): void
+  + validarDNI(dni: String): boolean <<static>>
+}
+
+interface Valorable {
+  + calcularDepreciacion(): double
+}
+
+class Coche extends Vehiculo implements Valorable {
+  + numeroPuertas: int
+  + tipoCombustible: TipoCombustible
+  + capacidadMaletero: int
+  + traccion: Traccion
+  + Coche(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, numeroPuertas: int, tipoCombustible: TipoCombustible, capacidadMaletero: int, traccion: Traccion)
+  + getNumeroPuertas(): int
+  + setNumeroPuertas(numeroPuertas: int): void
+  + getTipoCombustible(): TipoCombustible
+  + setTipoCombustible(tipoCombustible: TipoCombustible): void
+  + getCapacidadMaletero(): int
+  + setCapacidadMaletero(capacidadMaletero: int): void
+  + getTraccion(): Traccion
+  + setTaccion(traccion: Traccion): void
+  + calcularDepreciacion(): double
+}
+
+enum TipoCombustible {
+  GASOLINA
+  DIESEL
+  HIBRIDO
+  ELECTRICO
+}
+
+enum Traccion {
+  DELANTERA
+  TRASERA
+  4X4
+}
+
+class Camion extends Vehiculo implements Valorable {
+  + capacidadCarga: double
+  + numeroEjes: int
+  + longitudRemolque: double
+  * potenciaMotor: int
+  + Camion(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, capacidadCarga: double, numeroEjes: int, longitudRemolque: double, potenciaMotor: int)
+  + getCapacidadCarga(): double
+  + setCapacidadCarga(capacidadCarga: double): void
+  + getNumeroEjes(): int
+  + setNumeroEjes(numeroEjes: int): void
+  + getLongitudRemolque(): double
+  + setLongitudRemolque(longitudRemolque: double): void
+  + getPotenciaMotor(): int
+  + setPotenciaMotor(potenciaMotor: int): void
+  + calcularDepreciacion(): double
+}
+
+class Moto extends Vehiculo implements Valorable {
+  + cilindrada: int
+  + peso: int
+  + alturaAsiento: double
+  + tipoTransmision: TipoTransmision
+  + Moto(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, cilindrada: int, peso: int, alturaAsiento: double, tipoTransmision: TipoTransmision)
+  + getCilindrada(): int
+  + setCilindrada(cilindrada: int): void
+  + getPeso(): int
+  + setPeso(peso: int): void
+  + getAlturaAsiento(): double
+  + setAlturaAsiento(alturaAsiento: double): void
+  + getTipoMoto(): TipoMoto
+  + setTipoMoto(tipoMoto: TipoMoto): void
+  + getTipoTransmision(): TipoTransmision
+  + setTipoTransmision(tipoTransmision: TipoTransmision): void
+  + calcularDepreciacion(): double
+}
+
+enum TipoTransmision {
+  MANUAL
+  AUTOMATICA
+}
+
+class Sedan extends Coche {
+  + espacioInterior: double
+  + nivelConfort: NivelConfort
+  + Sedan(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, numeroPuertas: int, espacioInterior: double, nivelConfort: NivelConfort)
+  + getEspacioInterior(): double
+  + setEspacioInterior(espacioInterior: double): void
+  + getNivelConfort(): NivelConfort
+  + setNivelConfort(nivelConfort: NivelConfort): void
+}
+
+enum NivelConfort {
+  BASICO
+  MEDIO
+  PREMIUM
+}
+
+class SUV extends Coche {
+  + capacidadOffroad: boolean
+  + alturaLibreSuelo: double
+  + SUV(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, numeroPuertas: int, capacidadOffroad: boolean, alturaLibreSuelo: double)
+  + getCapacidadOffroad(): boolean
+  + setCapacidadOffroad(capacidadOffroad: boolean): void
+  + getAlturaLibreSuelo(): double
+  + setAlturaLibreSuelo(alturaLibreSuelo: double): void
+}
+
+class Deportivo extends Coche {
+  + aceleracion0a100: double
+  + potenciaCV: int
+  + tieneModoPista: boolean
+  + Deportivo(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, numeroPuertas: int, aceleracion0a100: double, potenciaCV: int, tieneModoPista: boolean)
+  + getAceleracion0a100(): double
+  + setAceleracion0a100(aceleracion0a100: double): void
+  + getPotenciaCV(): int
+  + setPotenciaCV(potenciaCV: int): void
+  + getTieneModoPista(): boolean
+  + setTieneModoPista(tieneModoPista: boolean): void
+}
+
+class Scooter extends Moto {
+  + espacioBajoAsiento: int
+  + Scooter(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, cilindrada: int, espacioBajoAsiento: int)
+  + getEspacioBajoAsiento(): int
+  + setEspacioBajoAsiento(espacioBajoAsiento: int): void
+}
+
+class MotoDeportiva extends Moto {
+  + tieneQuickShifter: boolean
+  + velocidadMaxima: int
+  + MotoDeportiva(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, cilindrada: int, tieneQuickShifter: boolean, velocidadMaxima: int)
+  + getTieneQuickShifter(): boolean
+  + setTieneQuickShifter(tieneQuickShifter: boolean): void
+  + getVelocidadMaxima(): int
+  + setVelocidadMaxima(velocidadMaxima: int): void
+}
+
+' Relaciones
+Vehiculo --* Persona : propietario
+Vehiculo --o Estado : estado
+
+Coche --|> Vehiculo
+Coche ..> TipoCombustible : tipoCombustible
+Coche ..> Traccion : traccion
+
+Camion --|> Vehiculo
+
+Moto --|> Vehiculo
+Moto ..> TipoTransmision : tipoTransmision
+
+Sedan --|> Coche
+Sedan ..> NivelConfort : nivelConfort
+
+SUV --|> Coche
+
+Deportivo --|> Coche
+
+Scooter --|> Moto
+
+MotoDeportiva --|> Moto
+
+Vehiculo ..|> Valorable
+@enduml
