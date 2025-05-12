@@ -1,4 +1,18 @@
 @startuml
-class Coche {
+class Coche extends Vehiculo implements Valorable {
+  + numeroPuertas: int
+  + tipoCoche: TipoCoche
+  + Coche(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, numeroPuertas: int, tipoCoche: TipoCoche)
+  + getNumeroPuertas(): int
+  + setNumeroPuertas(numeroPuertas: int): void
+  + getTipoCoche(): TipoCoche
+  + setTipoCoche(tipoCoche: TipoCoche): void
+  + calcularDepreciacion(): double
+}
+
+enum TipoCoche {
+  SEDAN
+  SUV
+  DEPORTIVO
 }
 @enduml
