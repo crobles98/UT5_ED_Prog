@@ -1,0 +1,7 @@
+@startuml
+enum TipoCoche {
+  SEDAN
+  SUV
+  DEPORTIVO
+}
+@enduml
