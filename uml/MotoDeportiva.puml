@@ -1,4 +1,7 @@
 @startuml
-class MotoDeportiva {
+class Scooter extends Moto {
+  + tieneQuickShifter: boolean
+  + Scooter(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, cilindrada: int, tieneQuickShifter: boolean)
+  + setTieneQuickShifter(): void
 }
 @enduml
