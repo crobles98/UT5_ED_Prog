@@ -1,12 +1,31 @@
 @startuml
 class Coche extends Vehiculo implements Valorable {
   + numeroPuertas: int
-  + tipoCoche: TipoCoche
-  + Coche(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, numeroPuertas: int, tipoCoche: TipoCoche)
+  + tipoCombustible: TipoCombustible <<enum>>
+  + capacidadMaletero: int
+  + traccion: Traccion <<enum>>
+  + Coche(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, numeroPuertas: int, tipoCombustible: TipoCombustible, capacidadMaletero: int, traccion: Traccion)
   + getNumeroPuertas(): int
   + setNumeroPuertas(numeroPuertas: int): void
-  + getTipoCoche(): TipoCoche
-  + setTipoCoche(tipoCoche: TipoCoche): void
+  + getTipoCombustible(): TipoCombustible
+  + setTipoCombustible(tipoCombustible: TipoCombustible): void
+  + getCapacidadMaletero(): int
+  + setCapacidadMaletero(capacidadMaletero: int): void
+  + getTraccion(): Traccion
+  + setTaccion(traccion: Traccion): void
   + calcularDepreciacion(): double
+}
+
+enum TipoCombustible {
+  GASOLINA
+  DIESEL
+  HIBRIDO
+  ELECTRICO
+}
+
+enum Traccion {
+  DELANTERA
+  TRASERA
+  4X4
 }
 @enduml
