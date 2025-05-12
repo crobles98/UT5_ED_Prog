@@ -1,7 +1,11 @@
 @startuml
 class Scooter extends Moto {
   + tieneQuickShifter: boolean
-  + Scooter(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, cilindrada: int, tieneQuickShifter: boolean)
-  + setTieneQuickShifter(): void
+  + velocidadMaxima: int
+  + Scooter(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, cilindrada: int, tieneQuickShifter: boolean, velocidadMaxima: int)
+  + getTieneQuickShifter(): boolean
+  + setTieneQuickShifter(tieneQuickShifter: boolean): void
+  + getVelocidadMaxima(): int
+  + setVelocidadMaxima(velocidadMaxima: int): void
 }
 @enduml
