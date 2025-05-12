@@ -1,8 +1,14 @@
 @startuml
 class Deportivo extends Coche {
-  + caballosPotencia: int
-  + Deportivo(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, numeroPuertas: int, caballosPotencia: int)
-  + getCaballosPotencia(): int
-  + setCaballosPotencia(caballosPotencia: int): void
+  + aceleracion0a100: double
+  + potenciaCV: int
+  + tieneModoPista: boolean
+  + Deportivo(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, numeroPuertas: int, aceleracion0a100: double, potenciaCV: int, tieneModoPista: boolean)
+  + getAceleracion0a100(): double
+  + setAceleracion0a100(aceleracion0a100: double): void
+  + getPotenciaCV(): int
+  + setPotenciaCV(potenciaCV: int): void
+  + getTieneModoPista(): boolean
+  + setTieneModoPista(tieneModoPista: boolean): void
 }
 @enduml
