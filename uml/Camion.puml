@@ -1,4 +1,12 @@
 @startuml
-class Camion {
+class Camion extends Vehiculo implements Valorable {
+  + capacidadCarga: double
+  + numeroEjes: int
+  + Camion(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, capacidadCarga: double, numeroEjes: int)
+  + getCapacidadCarga(): double
+  + setCapacidadCarga(capacidadCarga: double): void
+  + getNumeroEjes(): int
+  + setNumeroEjes(numeroEjes: int): void
+  + calcularDepreciacion(): double
 }
 @enduml
