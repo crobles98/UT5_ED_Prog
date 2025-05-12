@@ -1,8 +1,11 @@
 @startuml
 class SUV extends Coche {
-  + traccion4x4: boolean
+  + capacidadOffroad: boolean
+  + alturaLibreSuelo: double
   + SUV(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, numeroPuertas: int, traccion4x4: boolean)
-  + isTraccion4x4(): boolean
-  + setTraccion4x4(traccion4x4: boolean): void
+  + getCapacidadOffroad(): boolean
+  + setCapacidadOffroad(capacidadOffroad: boolean): void
+  + getAlturaLibreSuelo(): double
+  + setAlturaLibreSuelo(alturaLibreSuelo: double): void
 }
 @enduml
