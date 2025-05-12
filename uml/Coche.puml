@@ -9,10 +9,4 @@ class Coche extends Vehiculo implements Valorable {
   + setTipoCoche(tipoCoche: TipoCoche): void
   + calcularDepreciacion(): double
 }
-
-enum TipoCoche {
-  SEDAN
-  SUV
-  DEPORTIVO
-}
 @enduml
