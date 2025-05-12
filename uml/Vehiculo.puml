@@ -6,7 +6,8 @@ abstract class Vehiculo {
   + kilometraje: int
   + precio: double
   + propietario: Persona [0..1]
-  + Vehiculo(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double)
+  + estado: Estado
+  + Vehiculo(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, estado: Estado)
   + getMatricula(): String
   + setMatricula(matricula: String): void
   + getMarca(): String
@@ -19,6 +20,13 @@ abstract class Vehiculo {
   + setPrecio(precio: double): void
   + getPropietario(): Persona
   + setPropietario(propietario: Persona): void
+  + getEstado(): Estado
+  + setEstado(estado: Estado): void
   + calcularDepreciacion(): double <<abstract>>
+}
+
+enum Estado {
+  DISPONIBLE
+  VENDIDO
 }
 @enduml
