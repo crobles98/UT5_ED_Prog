@@ -1,4 +1,5 @@
 @startuml
-class Sedan {
+class Sedan extends Coche {
+  + Sedan(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, numeroPuertas: int)
 }
 @enduml
