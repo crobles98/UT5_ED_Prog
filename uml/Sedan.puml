@@ -1,5 +1,17 @@
 @startuml
 class Sedan extends Coche {
-  + Sedan(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, numeroPuertas: int)
+  + espacioInterior: double
+  + nivelConfort: NivelConfort <<enum>>
+  + Sedan(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, numeroPuertas: int, espacioInterior: double, nivelConfort: NivelConfort)
+  + getEspacioInterior(): double
+  + setEspacioInterior(espacioInterior: double): void
+  + getNivelConfort(): NivelConfort
+  + setNivelConfort(nivelConfort: NivelConfort): void
+}
+
+enum NivelConfort {
+  BASICO
+  MEDIO
+  PREMIUM
 }
 @enduml
