@@ -1,4 +1,8 @@
 @startuml
-class Deportivo {
+class Deportivo extends Coche {
+  + caballosPotencia: int
+  + Deportivo(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, numeroPuertas: int, caballosPotencia: int)
+  + getCaballosPotencia(): int
+  + setCaballosPotencia(caballosPotencia: int): void
 }
 @enduml
