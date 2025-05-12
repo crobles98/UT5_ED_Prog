@@ -1,4 +1,8 @@
 @startuml
-class Scooter {
+class Scooter extends Moto {
+  + espacioBajoAsiento: int
+  + Scooter(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, cilindrada: int, espacioBajoAsiento: int)
+  + getEspacioBajoAsiento(): int
+  + setEspacioBajoAsiento(espacioBajoAsiento: int): void
 }
 @enduml
