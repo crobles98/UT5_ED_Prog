@@ -4,8 +4,7 @@ class Moto extends Vehiculo implements Valorable {
   + peso: int
   + alturaAsiento: double
   + tipoTransmision: TipoTransmision <<enum>>
-  + tipoMoto: TipoMoto <<enum>>
-  + Moto(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, cilindrada: int, tipoMoto: TipoMoto, alturaAsiento: double, tipoTransmision: TipoTransmision, )
+  + Moto(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, cilindrada: int, peso: int, alturaAsiento: double, tipoTransmision: TipoTransmision)
   + getCilindrada(): int
   + setCilindrada(cilindrada: int): void
   + getPeso(): int
@@ -17,6 +16,7 @@ class Moto extends Vehiculo implements Valorable {
   + getTipoTransmision(): TipoTransmision
   + setTipoTransmision(tipoTransmision: TipoTransmision): void
   + calcularDepreciacion(): double
+}
 
 enum TipoTransmision {
   MANUAL
