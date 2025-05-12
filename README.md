@@ -7,10 +7,11 @@
 - [x] Crear carpeta `uml/`.
 - [x] Crear archivo `.puml` por cada clase detectada (estructura inicial).
 - [x] Primer commit con la estructura base y subida al remoto.
-- [ ] Modelar progresivamente atributos en los archivos '.puml'.
-- [ ] Modelar progresivamente métodos en los archivos '.puml'.
-- [ ] Modelar las relaciones entre clases en los archivos '.puml'.
-- [ ] Generar el diagrama UML en formato '.svg' con PlantUML.
-- [ ] Insertar el diagrama en el 'README.md'.
-- [ ] Commit final con todos los cambios y subida al remoto.
-- [ ] Opcional: Subir el código Java correspondiente.
+- [x] Modelar progresivamente atributos en los archivos '.puml'.
+- [x] Modelar progresivamente métodos en los archivos '.puml'.
+- [x] Modelar las relaciones entre clases en los archivos '.puml'.
+- [x] Generar el diagrama UML en formato '.svg' con PlantUML.
+- [x] Insertar el diagrama en el 'README.md'.
+- [x] Commit final con todos los cambios y subida al remoto.
+
+![Diagrama de clases](uml/diagrama_clases.svg)
