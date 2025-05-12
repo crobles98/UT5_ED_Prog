@@ -1,12 +1,15 @@
 @startuml
 class Moto extends Vehiculo implements Valorable {
   + cilindrada: int
+  + peso: int
   + alturaAsiento: double
   + tipoTransmision: TipoTransmision <<enum>>
   + tipoMoto: TipoMoto <<enum>>
   + Moto(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, cilindrada: int, tipoMoto: TipoMoto, alturaAsiento: double, tipoTransmision: TipoTransmision, )
   + getCilindrada(): int
   + setCilindrada(cilindrada: int): void
+  + getPeso(): int
+  + setPeso(peso: int): void
   + getAlturaAsiento(): double
   + setAlturaAsiento(alturaAsiento: double): void
   + getTipoMoto(): TipoMoto
