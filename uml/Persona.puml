@@ -1,4 +1,21 @@
 @startuml
 class Persona {
+  + nombre: String
+  + apellidos: String
+  + dni: String
+  + añoNacimiento: int
+  + fechaCaducidadCarnet: LocalDate
+  + Persona(nombre: String, apellidos: String, dni: String, añoNacimiento: int, fechaCaducidadCarnet: LocalDate)
+  + getNombre(): String
+  + setNombre(nombre: String): void
+  + getApellidos(): String
+  + setApellidos(apellidos: String): void
+  + getDni(): String
+  + setDni(dni: String): void
+  + getAñoNacimiento(): int
+  + setAñoNacimiento(añoNacimiento: int): void
+  + getFechaCaducidadCarnet(): LocalDate
+  + setFechaCaducidadCarnet(fechaCaducidadCarnet: LocalDate): void
+  + validarDNI(dni: String): boolean <<static>>
 }
 @enduml
