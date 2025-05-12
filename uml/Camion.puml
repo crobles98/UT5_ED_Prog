@@ -2,11 +2,17 @@
 class Camion extends Vehiculo implements Valorable {
   + capacidadCarga: double
   + numeroEjes: int
-  + Camion(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, capacidadCarga: double, numeroEjes: int)
+  + longitudRemolque: double
+  * potenciaMotor: int
+  + Camion(matricula: String, marca: String, modelo: String, kilometraje: int, precio: double, capacidadCarga: double, numeroEjes: int, longitudRemolque: double, potenciaMotor: int)
   + getCapacidadCarga(): double
   + setCapacidadCarga(capacidadCarga: double): void
   + getNumeroEjes(): int
   + setNumeroEjes(numeroEjes: int): void
+  + getLongitudRemolque(): double
+  + setLongitudRemolque(longitudRemolque: double): void
+  + getPotenciaMotor(): int
+  + setPotenciaMotor(potenciaMotor: int): void
   + calcularDepreciacion(): double
 }
 @enduml
