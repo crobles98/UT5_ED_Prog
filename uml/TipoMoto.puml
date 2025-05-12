@@ -1,6 +1,0 @@
-@startuml
-enum TipoMoto {
-  SCOOTER
-  DEPORTIVA
-}
-@enduml
